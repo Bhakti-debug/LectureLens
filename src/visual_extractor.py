@@ -62,8 +62,8 @@ def download_video(url, output_path):
 def extract_frame(video_path, timestamp, output_path):
     """
     Extract the frame closest to the timestamp supplied by Gemini.
+    Guarantees VideoCapture resource release on all paths.
     """
-
     cap = cv2.VideoCapture(str(video_path))
 
     if not cap.isOpened():
@@ -71,68 +71,76 @@ def extract_frame(video_path, timestamp, output_path):
             f"Could not open temporary video: {video_path}"
         )
 
-    fps = cap.get(cv2.CAP_PROP_FPS)
-    total_frames = cap.get(cv2.CAP_PROP_FRAME_COUNT)
-    duration = total_frames / fps if fps > 0 else 0
+    try:
+        fps = cap.get(cv2.CAP_PROP_FPS)
+        total_frames = cap.get(cv2.CAP_PROP_FRAME_COUNT)
+        duration = total_frames / fps if fps > 0 else 0
 
-    if timestamp < 0 or timestamp >= duration:
+        if fps <= 0:
+            raise RuntimeError(
+                "Could not determine video FPS."
+            )
+
+        if timestamp < 0:
+            raise ValueError(
+                f"Negative timestamp {timestamp}s is invalid."
+            )
+
+        # Graceful tolerance: if timestamp slightly exceeds duration by <= 2s, clamp to last valid frame
+        if timestamp >= duration:
+            if duration > 0 and (timestamp - duration) <= 2.0:
+                timestamp = max(0.0, duration - 0.2)
+            else:
+                raise ValueError(
+                    f"Timestamp {timestamp}s is outside the video duration "
+                    f"({duration:.1f}s)."
+                )
+
+        target_frame = int(
+            round(timestamp * fps)
+        )
+
+        print(
+            f"  Extracting frame at "
+            f"{timestamp:.1f}s "
+            f"(frame {target_frame})"
+        )
+
+        cap.set(
+            cv2.CAP_PROP_POS_FRAMES,
+            target_frame
+        )
+
+        success, frame = cap.read()
+
+        if not success:
+            raise RuntimeError(
+                f"Could not extract frame at "
+                f"{timestamp}s."
+            )
+
+        output_path = Path(output_path)
+        output_path.parent.mkdir(
+            parents=True,
+            exist_ok=True
+        )
+
+        saved = cv2.imwrite(
+            str(output_path),
+            frame
+        )
+
+        if not saved:
+            raise RuntimeError(
+                f"Could not save visual image: "
+                f"{output_path}"
+            )
+
+        return output_path
+
+    finally:
         cap.release()
-        raise ValueError(
-            f"Timestamp {timestamp}s is outside the video duration "
-            f"({duration:.1f}s)."
-        )
 
-    if fps <= 0:
-        cap.release()
-
-        raise RuntimeError(
-            "Could not determine video FPS."
-        )
-
-    target_frame = int(
-        round(timestamp * fps)
-    )
-
-    print(
-        f"  Extracting frame at "
-        f"{timestamp:.1f}s "
-        f"(frame {target_frame})"
-    )
-
-    cap.set(
-        cv2.CAP_PROP_POS_FRAMES,
-        target_frame
-    )
-
-    success, frame = cap.read()
-
-    cap.release()
-
-    if not success:
-        raise RuntimeError(
-            f"Could not extract frame at "
-            f"{timestamp}s."
-        )
-
-    output_path = Path(output_path)
-
-    output_path.parent.mkdir(
-        parents=True,
-        exist_ok=True
-    )
-
-    saved = cv2.imwrite(
-        str(output_path),
-        frame
-    )
-
-    if not saved:
-        raise RuntimeError(
-            f"Could not save visual image: "
-            f"{output_path}"
-        )
-
-    return output_path
 
 
 def extract_visuals(

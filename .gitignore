@@ -1,5 +1,17 @@
 .venv/
 .env
+.env.local
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.coverage
+htmlcov/
 data/videos/
+data/video/
+data/raw/
+data/processed/
+*.mp4
+*.webm
+*.mkv

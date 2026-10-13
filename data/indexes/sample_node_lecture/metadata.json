@@ -1,0 +1,97 @@
+{
+  "lecture_id": "sample_node_lecture",
+  "dimension": 384,
+  "model_name": "all-MiniLM-L6-v2",
+  "content_hash": "",
+  "chunk_count": 4,
+  "chunks": [
+    {
+      "chunk_id": "sample_node_lecture_sec_01_chk_00",
+      "doc_id": "sample_node_lecture_sec_01",
+      "lecture_id": "sample_node_lecture",
+      "section_number": 1,
+      "section_title": "Understanding JavaScript & JS Engines",
+      "start_time": 31.0,
+      "end_time": 145.0,
+      "text": "Section 1: Understanding JavaScript & JS Engines [00:31 - 02:25]\nSpoken Lecture Content:\n- JavaScript was originally designed as a client-side scripting language executed strictly inside web browsers to make web pages interactive.\n- Browsers cannot run JavaScript directly without a specialized component called a JavaScript Engine.\n- When a user downloads and uses a web browser, the JavaScript Engine comes embedded with it to execute JS scripts.\n- Different web browsers rely on different JS engines: Chrome uses Google's V8 engine, Firefox uses SpiderMonkey, and Safari uses Apple's JavaScriptCore.\n- Among all JavaScript engines, Google Chrome's V8 engine is the most popular and widely used.\nVisual Material & Slides:\n- [slide at 00:35] Title slide introducing the topic 'What is Node.JS?' featuring the Node.js logo. | Text on screen: \"What is Node.JS?\"\n- [slide at 01:05] Illustration showing JavaScript code executing inside a web browser window using an embedded JavaScript engine. | Text on screen: \"JS - Javascript Engine\"\n- [diagram at 01:59] Diagram displaying icons of major web browsers alongside their corresponding JavaScript engine logos. | Text on screen: \"Javascript Engine - Chrome (V8), Firefox (SpiderMonkey), Safari (Apple JS Engine)\"\n- [slide at 02:25] Graphic highlighting the V8 Engine as the most popular JavaScript engine. | Text on screen: \"Javascript Engine V8 - Most Popular Engine\"\nAudio-Visual Synthesis:\n- The instructor introduces browser-based JS execution using the browser visual, then switches to the engine logos diagram to explain that Chrome uses V8, Firefox uses SpiderMonkey, and Safari uses Apple's engine, concluding with V8 highlighted as the most popular.\nKey Concepts: JavaScript Engine, Chrome V8 Engine, SpiderMonkey, JavaScriptCore, Browser execution sandbox\nKey Takeaway: Web browsers rely on specialized JavaScript engines—most notably Google Chrome's V8—to parse and execute client-side JavaScript code.",
+      "source_type": "analyzed_section",
+      "chunk_index": 0,
+      "token_count": 291,
+      "metadata": {
+        "video_summary": "This video introduces Node.js, explaining what it is, how it was created, and why it exists. The instructor breaks down how JavaScript traditionally runs inside browsers using JavaScript engines like V8, and explains how Ryan Dahl combined Chrome's V8 engine with C++ to create Node.js. The lecture demonstrates running JavaScript code in Chrome DevTools versus the Node.js terminal REPL, concluding with the official definition of Node.js as an open-source, cross-platform JavaScript runtime environment.",
+        "key_concepts": [
+          "JavaScript Engine",
+          "Chrome V8 Engine",
+          "SpiderMonkey",
+          "JavaScriptCore",
+          "Browser execution sandbox"
+        ]
+      }
+    },
+    {
+      "chunk_id": "sample_node_lecture_sec_02_chk_00",
+      "doc_id": "sample_node_lecture_sec_02",
+      "lecture_id": "sample_node_lecture",
+      "section_number": 2,
+      "section_title": "Creation of Node.js and Core Capabilities",
+      "start_time": 145.0,
+      "end_time": 279.0,
+      "text": "Section 2: Creation of Node.js and Core Capabilities [02:25 - 04:39]\nSpoken Lecture Content:\n- Developer Ryan Dahl created Node.js by taking Chrome's open-source V8 JavaScript engine and embedding it inside C++ code.\n- By binding V8 with C++, JavaScript gained the ability to execute outside the web browser environment.\n- Since C++ interacts natively with machine hardware and operating systems, Node.js enables JavaScript to perform machine-level operations such as file system handling, file access, and memory management.\n- This architectural setup allows developers to write backend server-side applications and web servers entirely in JavaScript.\nVisual Material & Slides:\n- [diagram at 02:46] Flowchart diagram illustrating Ryan Dahl combining Chrome's V8 engine with C++ to produce Node.js. | Text on screen: \"Javascript Engine - Ryan Dahl - V8 -> C++ -> Node.js\"\n- [slide at 03:35] Summary slide listing key capabilities provided by Node.js. | Text on screen: \"NodeJS\n- You can run JS outside of the browser\n- Javascript can talk to native machine because of c++\n- You can create webservers in Javascript Language\"\nAudio-Visual Synthesis:\n- While pointing to the V8-to-C++ diagram, the lecturer explains Ryan Dahl's innovation. He then transitions to the summary slide to outline how embedding V8 in C++ enables running JS outside the browser and interacting with system APIs.\nKey Concepts: Ryan Dahl, V8 Engine embedding in C++, Out-of-browser JS execution, Native OS interaction / File handling, Server-side JavaScript\nKey Takeaway: By integrating Chrome's V8 engine with C++, Ryan Dahl enabled JavaScript to run outside the browser and perform host machine-level server operations.",
+      "source_type": "analyzed_section",
+      "chunk_index": 0,
+      "token_count": 260,
+      "metadata": {
+        "video_summary": "This video introduces Node.js, explaining what it is, how it was created, and why it exists. The instructor breaks down how JavaScript traditionally runs inside browsers using JavaScript engines like V8, and explains how Ryan Dahl combined Chrome's V8 engine with C++ to create Node.js. The lecture demonstrates running JavaScript code in Chrome DevTools versus the Node.js terminal REPL, concluding with the official definition of Node.js as an open-source, cross-platform JavaScript runtime environment.",
+        "key_concepts": [
+          "Ryan Dahl",
+          "V8 Engine embedding in C++",
+          "Out-of-browser JS execution",
+          "Native OS interaction / File handling",
+          "Server-side JavaScript"
+        ]
+      }
+    },
+    {
+      "chunk_id": "sample_node_lecture_sec_03_chk_00",
+      "doc_id": "sample_node_lecture_sec_03",
+      "lecture_id": "sample_node_lecture",
+      "section_number": 3,
+      "section_title": "Defining Node.js & Practical Demonstration",
+      "start_time": 279.0,
+      "end_time": 385.0,
+      "text": "Section 3: Defining Node.js & Practical Demonstration [04:39 - 06:25]\nSpoken Lecture Content:\n- Node.js is neither a programming language, nor a framework, nor a library; it is a JavaScript Runtime Environment.\n- In a browser, JavaScript runs within the browser console via the embedded V8 engine.\n- In the OS terminal, attempting to run raw JavaScript commands directly results in a syntax error because standard terminal shells lack a JS interpreter.\n- By launching the Node.js REPL (`node`), an interactive environment opens where JavaScript code can be typed and executed directly on the host operating system.\nVisual Material & Slides:\n- [slide at 04:40] Definition slide stating that Node.js is a runtime environment for JavaScript. | Text on screen: \"What is NodeJS?\nNodeJS is a Runtime Env. for Javascript\"\n- [demonstration at 05:01] Chrome DevTools Console showing JavaScript code execution (e.g., console.log and arithmetic). | Text on screen: \"console.log('Hello')\nHello\n2+3\n5\"\n- [demonstration at 05:43] Mac OS Terminal demonstrating an error when running raw JS code, followed by launching `node` to enter the Node.js interactive REPL. | Text on screen: \"zsh: unknown file attribute: H\n% node\nWelcome to Node.js v16.14.2.\n> console.log('Hello')\nHello\n> 2+5\n7\n> console.log('Hello from JS')\nHello from JS\"\nAudio-Visual Synthesis:\n- The presenter shows the definition slide, then demonstrates running JS in Chrome console. Next, he switches to the Mac terminal to demonstrate that running raw JS directly fails, but launching the `node` REPL executes the exact same JavaScript commands outside the browser.\nKey Concepts: Runtime Environment, Node.js REPL, Terminal execution of JS\nKey Takeaway: Node.js acts as an interactive runtime environment that allows developers to run JavaScript outside the browser via the terminal.",
+      "source_type": "analyzed_section",
+      "chunk_index": 0,
+      "token_count": 282,
+      "metadata": {
+        "video_summary": "This video introduces Node.js, explaining what it is, how it was created, and why it exists. The instructor breaks down how JavaScript traditionally runs inside browsers using JavaScript engines like V8, and explains how Ryan Dahl combined Chrome's V8 engine with C++ to create Node.js. The lecture demonstrates running JavaScript code in Chrome DevTools versus the Node.js terminal REPL, concluding with the official definition of Node.js as an open-source, cross-platform JavaScript runtime environment.",
+        "key_concepts": [
+          "Runtime Environment",
+          "Node.js REPL",
+          "Terminal execution of JS"
+        ]
+      }
+    },
+    {
+      "chunk_id": "sample_node_lecture_sec_04_chk_00",
+      "doc_id": "sample_node_lecture_sec_04",
+      "lecture_id": "sample_node_lecture",
+      "section_number": 4,
+      "section_title": "Official Node.js Definition & Prerequisites",
+      "start_time": 385.0,
+      "end_time": 464.0,
+      "text": "Section 4: Official Node.js Definition & Prerequisites [06:25 - 07:44]\nSpoken Lecture Content:\n- The official definition on nodejs.org states: 'Node.js is an open-source, cross-platform JavaScript runtime environment.'\n- Because Node.js is simply an execution environment, developers write pure JavaScript code inside it.\n- Having a strong foundation in core JavaScript concepts is an absolute prerequisite before starting to build applications with Node.js.\nVisual Material & Slides:\n- [screenshot at 06:38] Official Node.js website (nodejs.org) homepage highlighting the formal definition. | Text on screen: \"Node.js® is an open-source, cross-platform JavaScript runtime environment.\"\n- [screenshot at 07:02] YouTube playlist page for 'Ultimate Javascript Tutorials' recommending JS prerequisite topics. | Text on screen: \"Ultimate Javascript Tutorials - Piyush Garg\"\nAudio-Visual Synthesis:\n- The lecturer navigates to nodejs.org to highlight the official definition text on screen, and then references his YouTube JavaScript tutorial playlist as the recommended prerequisite before learning Node.js.\nKey Concepts: Open-source, Cross-platform runtime, JavaScript prerequisites\nKey Takeaway: Node.js is an open-source, cross-platform runtime for running JavaScript, requiring strong foundational knowledge of core JavaScript.",
+      "source_type": "analyzed_section",
+      "chunk_index": 0,
+      "token_count": 173,
+      "metadata": {
+        "video_summary": "This video introduces Node.js, explaining what it is, how it was created, and why it exists. The instructor breaks down how JavaScript traditionally runs inside browsers using JavaScript engines like V8, and explains how Ryan Dahl combined Chrome's V8 engine with C++ to create Node.js. The lecture demonstrates running JavaScript code in Chrome DevTools versus the Node.js terminal REPL, concluding with the official definition of Node.js as an open-source, cross-platform JavaScript runtime environment.",
+        "key_concepts": [
+          "Open-source",
+          "Cross-platform runtime",
+          "JavaScript prerequisites"
+        ]
+      }
+    }
+  ]
+}

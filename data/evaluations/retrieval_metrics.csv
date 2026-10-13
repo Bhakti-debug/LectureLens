@@ -1,0 +1,8 @@
+id,question,target_section,retrieved_sections,hit,mrr,latency_ms
+q01,What is the name of Google Chrome's JavaScript engine?,1,"[1, 2, 4, 3]",True,1.0,15.03
+q02,Who created Node.js and what did he combine V8 with?,2,"[2, 1, 4, 3]",True,1.0,14.08
+q03,What happens when you run raw JavaScript code directly in a standard OS terminal without node?,3,"[3, 2, 1, 4]",True,1.0,12.71
+q04,What is the official definition of Node.js on nodejs.org?,4,"[4, 3, 2, 1]",True,1.0,12.5
+q05,How does bundling the V8 engine with C++ grant JavaScript access to the host operating system?,2,"[2, 1, 3, 4]",True,1.0,11.28
+q06,Which JS engines are utilized by Mozilla Firefox and Apple Safari?,1,"[1, 2, 4, 3]",True,1.0,12.38
+q07,Why is Node.js classified as a runtime environment rather than a programming language?,3,"[3, 2, 4, 1]",True,1.0,11.0

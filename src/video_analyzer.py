@@ -283,54 +283,81 @@ def analyze_youtube_video(youtube_url: str):
     Returns
     -------
     dict
-        Structured multimodal lecture analysis.
+        Structured multimodal lecture analysis with normalized timestamps.
     """
+    from utils.validation import (
+        validate_youtube_url,
+        fetch_video_metadata,
+        validate_and_normalize_timestamps,
+        format_timestamp,
+    )
 
-    if not youtube_url:
-        raise ValueError("YouTube URL cannot be empty.")
-
-    if not (
-        youtube_url.startswith("https://www.youtube.com/")
-        or youtube_url.startswith("https://youtube.com/")
-        or youtube_url.startswith("https://youtu.be/")
-    ):
-        raise ValueError(
-            "Please provide a valid public YouTube URL."
-        )
+    is_valid, msg, canonical_url = validate_youtube_url(youtube_url)
+    if not is_valid or not canonical_url:
+        raise ValueError(msg)
 
     client = create_gemini_client()
     model = get_model_name()
 
     print(f"Analyzing YouTube video with Gemini...")
     print(f"Model: {model}")
-    print(f"URL: {youtube_url}")
+    print(f"URL: {canonical_url}")
+
+    # Discover real video duration without full download
+    meta = fetch_video_metadata(canonical_url)
+    verified_duration = meta.get("duration", 0.0)
+    if verified_duration > 0:
+        print(f"Verified video duration: {format_timestamp(verified_duration)} ({verified_duration:.1f}s)")
+        effective_prompt = (
+            ANALYSIS_PROMPT
+            + f"\n\nVERIFIED VIDEO DURATION:\n"
+            f"The verified duration of this video is exactly {verified_duration:.1f} seconds "
+            f"({format_timestamp(verified_duration)}). "
+            f"All section end_times and visual timestamps MUST be <= {verified_duration:.1f} seconds.\n"
+        )
+    else:
+        effective_prompt = ANALYSIS_PROMPT
+
     print()
     print("Gemini is processing the video's audio and visual content...")
     print("No local video download is required.")
 
-    # Gemini supports public YouTube URLs directly as video input.
-    response = client.models.generate_content(
-        model=model,
-        contents=types.Content(
-            parts=[
-                types.Part(
-                    file_data=types.FileData(
-                        file_uri=youtube_url
-                    )
-                ),
-                types.Part(
-                    text=ANALYSIS_PROMPT
-                ),
-            ]
-        ),
-    )
+    try:
+        response = client.models.generate_content(
+            model=model,
+            contents=types.Content(
+                parts=[
+                    types.Part(
+                        file_data=types.FileData(
+                            file_uri=canonical_url
+                        )
+                    ),
+                    types.Part(
+                        text=effective_prompt
+                    ),
+                ]
+            ),
+        )
+    except Exception as exc:
+        raise RuntimeError(
+            f"Gemini API request failed: {exc}"
+        ) from exc
 
     if not response.text:
         raise RuntimeError(
             "Gemini returned an empty response."
         )
 
-    return extract_json(response.text)
+    raw_analysis = extract_json(response.text)
+
+    # Post-analysis timestamp integrity validation and clamping
+    normalized_analysis = validate_and_normalize_timestamps(
+        raw_analysis,
+        actual_duration=verified_duration if verified_duration > 0 else None,
+    )
+
+    return normalized_analysis
+
 
 
 def save_analysis(analysis_data, output_path):

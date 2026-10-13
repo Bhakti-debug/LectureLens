@@ -3,3 +3,8 @@ python-dotenv
 yt-dlp
 opencv-python
 streamlit
+faiss-cpu
+sentence-transformers
+reportlab
+pytest
+pydantic

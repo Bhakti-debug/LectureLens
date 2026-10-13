@@ -1,0 +1,147 @@
+{
+  "timestamp": "2026-10-13 11:33:34",
+  "lecture_id": "sample_node_lecture",
+  "lecture_title": "Introduction to Node.js and Core Concepts",
+  "embedding_model": "all-MiniLM-L6-v2",
+  "retrieval_metrics": {
+    "total_queries": 7,
+    "hit_rate_at_k": 1.0,
+    "mrr": 1.0,
+    "avg_latency_ms": 12.71,
+    "k": 4
+  },
+  "relevance_metrics": {
+    "total_samples": 13,
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1_score": 1.0,
+    "confusion_matrix": {
+      "true_positives": 9,
+      "false_positives": 0,
+      "true_negatives": 4,
+      "false_negatives": 0
+    },
+    "false_rejection_rate": 0.0,
+    "false_acceptance_rate": 0.0
+  },
+  "relevance_query_details": [
+    {
+      "id": "q01",
+      "question": "What is the name of Google Chrome's JavaScript engine?",
+      "expected": "in_scope",
+      "predicted_category": "in_scope",
+      "predicted_relevant": true,
+      "result": "TP",
+      "reason": "Fallback heuristic accepted (score: 0.75)."
+    },
+    {
+      "id": "q02",
+      "question": "Who created Node.js and what did he combine V8 with?",
+      "expected": "in_scope",
+      "predicted_category": "in_scope",
+      "predicted_relevant": true,
+      "result": "TP",
+      "reason": "Fallback heuristic accepted (score: 0.66)."
+    },
+    {
+      "id": "q03",
+      "question": "What happens when you run raw JavaScript code directly in a standard OS terminal without node?",
+      "expected": "in_scope",
+      "predicted_category": "insufficient_evidence",
+      "predicted_relevant": true,
+      "result": "TP",
+      "reason": "The question is directly related to the lecture's core discussion on JavaScript runtime environments and the necessity of Node.js to execute JS outside the browser, but the provided passages do not explicitly describe the exact terminal behavior or errors that occur without Node installed."
+    },
+    {
+      "id": "q04",
+      "question": "What is the official definition of Node.js on nodejs.org?",
+      "expected": "in_scope",
+      "predicted_category": "in_scope",
+      "predicted_relevant": true,
+      "result": "TP",
+      "reason": "The question directly asks about the official definition of Node.js, which is explicitly covered in Section 4 of the lecture."
+    },
+    {
+      "id": "q05",
+      "question": "How does bundling the V8 engine with C++ grant JavaScript access to the host operating system?",
+      "expected": "in_scope",
+      "predicted_category": "insufficient_evidence",
+      "predicted_relevant": true,
+      "result": "TP",
+      "reason": "The question is directly related to how Node.js integrates V8 with C++ to provide OS-level capabilities, but the provided lecture excerpts do not contain enough technical detail to fully explain the underlying mechanism."
+    },
+    {
+      "id": "q06",
+      "question": "Which JS engines are utilized by Mozilla Firefox and Apple Safari?",
+      "expected": "in_scope",
+      "predicted_category": "insufficient_evidence",
+      "predicted_relevant": true,
+      "result": "TP",
+      "reason": "The question is directly related to the lecture's discussion of JavaScript engines in browsers, but the provided excerpts do not mention the specific engines used by Mozilla Firefox or Apple Safari."
+    },
+    {
+      "id": "q07",
+      "question": "Why is Node.js classified as a runtime environment rather than a programming language?",
+      "expected": "in_scope",
+      "predicted_category": "in_scope",
+      "predicted_relevant": true,
+      "result": "TP",
+      "reason": "The question directly relates to core concepts covered in the lecture, specifically the definition and classification of Node.js as a runtime environment rather than a programming language."
+    },
+    {
+      "id": "q08",
+      "question": "What are the specific internal phases of the libuv event loop in Node.js?",
+      "expected": "insufficient_evidence",
+      "predicted_category": "in_scope",
+      "predicted_relevant": true,
+      "result": "TP",
+      "reason": "Fallback heuristic accepted (score: 0.35)."
+    },
+    {
+      "id": "q09",
+      "question": "How do Worker Threads in Node.js communicate via MessagePort and SharedArrayBuffer?",
+      "expected": "insufficient_evidence",
+      "predicted_category": "in_scope",
+      "predicted_relevant": true,
+      "result": "TP",
+      "reason": "Fallback heuristic accepted (score: 0.44)."
+    },
+    {
+      "id": "q10",
+      "question": "What is the capital city of Japan?",
+      "expected": "out_of_scope",
+      "predicted_category": "out_of_scope",
+      "predicted_relevant": false,
+      "result": "TN",
+      "reason": "Semantic similarity (0.062) is below minimal relevance boundary."
+    },
+    {
+      "id": "q11",
+      "question": "What was the final score in the recent cricket world cup match?",
+      "expected": "out_of_scope",
+      "predicted_category": "out_of_scope",
+      "predicted_relevant": false,
+      "result": "TN",
+      "reason": "Semantic similarity (-0.025) is below minimal relevance boundary."
+    },
+    {
+      "id": "q12",
+      "question": "How do you cook traditional Italian carbonara pasta?",
+      "expected": "out_of_scope",
+      "predicted_category": "out_of_scope",
+      "predicted_relevant": false,
+      "result": "TN",
+      "reason": "Fallback: semantic score (0.13) < threshold (0.35)."
+    },
+    {
+      "id": "q13",
+      "question": "How does the Apple V8 internal combustion car engine compare to a Ferrari engine?",
+      "expected": "out_of_scope",
+      "predicted_category": "out_of_scope",
+      "predicted_relevant": false,
+      "result": "TN",
+      "reason": "Fallback: semantic score (0.33) < threshold (0.35)."
+    }
+  ]
+}
