@@ -23,6 +23,8 @@ from utils.config import (
     NOTES_PATH,
     NOTES_MD_PATH,
     VISUAL_MANIFEST_PATH,
+    VISUAL_DIR,
+    VISUALS_DIR,
 )
 
 if not GEMINI_API_KEY:
@@ -42,4 +44,6 @@ __all__ = [
     "NOTES_PATH",
     "NOTES_MD_PATH",
     "VISUAL_MANIFEST_PATH",
+    "VISUAL_DIR",
+    "VISUALS_DIR",
 ]

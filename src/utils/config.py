@@ -19,6 +19,7 @@ DATA_DIR = BASE_DIR / "data"
 ANALYSIS_DIR = DATA_DIR / "analysis"
 NOTES_DIR = DATA_DIR / "notes"
 VISUALS_DIR = DATA_DIR / "visuals"
+VISUAL_DIR = VISUALS_DIR
 INDEXES_DIR = DATA_DIR / "indexes"
 EVALUATIONS_DIR = DATA_DIR / "evaluations"
 LECTURES_DIR = DATA_DIR / "lectures"
@@ -28,6 +29,7 @@ ANALYSIS_PATH = ANALYSIS_DIR / "video_analysis.json"
 NOTES_PATH = NOTES_DIR / "study_notes.json"
 NOTES_MD_PATH = NOTES_DIR / "study_notes.md"
 VISUAL_MANIFEST_PATH = VISUALS_DIR / "visual_manifest.json"
+
 
 
 @dataclass(frozen=True)
@@ -50,7 +52,9 @@ class AppConfig:
     analysis_dir: Path = ANALYSIS_DIR
     notes_dir: Path = NOTES_DIR
     visuals_dir: Path = VISUALS_DIR
+    visual_dir: Path = VISUALS_DIR
     indexes_dir: Path = INDEXES_DIR
+
     evaluations_dir: Path = EVALUATIONS_DIR
     lectures_dir: Path = LECTURES_DIR
 
