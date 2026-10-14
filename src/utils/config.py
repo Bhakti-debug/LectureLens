@@ -36,7 +36,7 @@ VISUAL_MANIFEST_PATH = VISUALS_DIR / "visual_manifest.json"
 class AppConfig:
     """Application configuration parameters."""
     gemini_api_key: str = field(default_factory=lambda: os.getenv("GEMINI_API_KEY", ""))
-    gemini_model: str = field(default_factory=lambda: os.getenv("GEMINI_MODEL", "gemini-3.8-flash"))
+    gemini_model: str = field(default_factory=lambda: os.getenv("GEMINI_MODEL", "gemini-3.7-flash"))
     embedding_model: str = field(default_factory=lambda: os.getenv("EMBEDDING_MODEL", "all-MiniLM-L6-v2"))
     chunk_size: int = field(default_factory=lambda: int(os.getenv("CHUNK_SIZE", "400")))
     chunk_overlap: int = field(default_factory=lambda: int(os.getenv("CHUNK_OVERLAP", "60")))
@@ -97,4 +97,4 @@ def validate_config(require_api_key: bool = True) -> AppConfig:
 
 # Backward compatibility exports
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
-GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-3.8-flash")
+GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-3.7-flash")

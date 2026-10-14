@@ -35,7 +35,11 @@ from pathlib import Path
 
 from google.genai import types
 
-from gemini_client import create_gemini_client, get_model_name
+from gemini_client import (
+    create_gemini_client,
+    get_model_name,
+    generate_content_with_retry,
+)
 
 ANALYSIS_PROMPT = """
 You are the multimodal analysis engine for LectureLens, an application that
@@ -323,8 +327,9 @@ def analyze_youtube_video(youtube_url: str):
     print("No local video download is required.")
 
     try:
-        response = client.models.generate_content(
-            model=model,
+        response = generate_content_with_retry(
+            client=client,
+            preferred_model=model,
             contents=types.Content(
                 parts=[
                     types.Part(

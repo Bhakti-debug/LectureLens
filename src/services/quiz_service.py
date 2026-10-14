@@ -8,7 +8,11 @@ import json
 import re
 from typing import Any, Dict, List, Optional
 
-from gemini_client import create_gemini_client, get_model_name
+from gemini_client import (
+    create_gemini_client,
+    get_model_name,
+    generate_content_with_retry,
+)
 from models.schemas import Flashcard, QuizQuestion
 from utils.logging_config import get_logger
 
@@ -155,8 +159,9 @@ class QuizService:
                 lecture_content=lecture_content,
             )
 
-            response = client.models.generate_content(
-                model=model,
+            response = generate_content_with_retry(
+                client=client,
+                preferred_model=model,
                 contents=prompt,
             )
 

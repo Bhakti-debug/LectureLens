@@ -9,7 +9,11 @@ import re
 from typing import Any, Dict, List, Optional
 from google.genai import types
 
-from gemini_client import create_gemini_client, get_model_name
+from gemini_client import (
+    create_gemini_client,
+    get_model_name,
+    generate_content_with_retry,
+)
 from models.schemas import RetrievalResult
 from utils.config import get_config
 from utils.logging_config import get_logger
@@ -124,8 +128,9 @@ class RelevanceGuard:
         try:
             client = create_gemini_client()
             model = get_model_name()
-            response = client.models.generate_content(
-                model=model,
+            response = generate_content_with_retry(
+                client=client,
+                preferred_model=model,
                 contents=prompt,
             )
 

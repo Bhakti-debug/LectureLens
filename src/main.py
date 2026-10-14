@@ -271,7 +271,16 @@ with st.expander("➕ Analyze a New YouTube Lecture", expanded=False):
                 st.success("Lecture analyzed successfully! Refreshing active view...")
                 st.rerun()
             except Exception as e:
-                st.error(f"Lecture processing failed: {e}")
+                err_str = str(e)
+                if "429" in err_str or "RESOURCE_EXHAUSTED" in err_str:
+                    st.error(
+                        "⚠️ **Gemini API Daily Free-Tier Quota Exceeded (429 RESOURCE_EXHAUSTED)**\n\n"
+                        "The daily request limit for the selected model was reached on your Google AI Studio project. "
+                        "The system has configured automated failover to `gemini-3.7-flash`. "
+                        "Please click **Analyze Lecture** again to retry, or add a fresh `GEMINI_API_KEY` in `.env` if quota limits persist."
+                    )
+                else:
+                    st.error(f"Lecture processing failed: {e}")
 
 
 # ---------------------------------------------------------

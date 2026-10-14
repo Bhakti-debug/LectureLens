@@ -2,7 +2,11 @@ import json
 import sys
 from pathlib import Path
 
-from gemini_client import create_gemini_client, get_model_name
+from gemini_client import (
+    create_gemini_client,
+    get_model_name,
+    generate_content_with_retry,
+)
 
 
 NOTE_GENERATION_PROMPT = """
@@ -189,8 +193,9 @@ Here is the multimodal lecture analysis:
     print("Generating study notes with Gemini...")
     print(f"Model: {model}")
 
-    response = client.models.generate_content(
-        model=model,
+    response = generate_content_with_retry(
+        client=client,
+        preferred_model=model,
         contents=prompt,
     )
 

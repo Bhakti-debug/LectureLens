@@ -4,8 +4,11 @@ Synthesizes evidence-grounded answers using retrieved lecture passages,
 strictly adhering to lecture boundaries and honest evidence attribution.
 """
 
-from typing import Any, Dict, List, Optional
-from gemini_client import create_gemini_client, get_model_name
+from gemini_client import (
+    create_gemini_client,
+    get_model_name,
+    generate_content_with_retry,
+)
 from models.schemas import RetrievalResult
 from utils.logging_config import get_logger
 from utils.validation import format_timestamp
@@ -111,8 +114,9 @@ class AnswerGenerator:
             )
 
         try:
-            response = self.client.models.generate_content(
-                model=self.model,
+            response = generate_content_with_retry(
+                client=self.client,
+                preferred_model=self.model,
                 contents=prompt,
             )
             answer_text = response.text or ""
