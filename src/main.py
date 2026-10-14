@@ -148,12 +148,14 @@ def run_pipeline(youtube_url: str):
     lecture_id = service.get_lecture_id_from_url(youtube_url)
 
     with st.status("Processing educational lecture...", expanded=True) as status:
-        st.write("🔍 Step 1: Multimodal analysis with Gemini...")
+        st.write("🔍 **Step 1/4:** Analyzing video audio & visual content with Gemini...")
+        st.caption("*(Gemini multimodal video analysis usually takes 30–60 seconds depending on video duration)*")
         analysis = analyze_youtube_video(youtube_url)
         save_analysis(analysis, ANALYSIS_PATH)
-        st.write(f"✓ Detected {len(analysis.get('sections', []))} timestamped lecture sections.")
+        dur_str = format_timestamp(analysis.get("verified_duration_seconds", 0))
+        st.write(f"✓ Video analyzed! Identified {len(analysis.get('sections', []))} timestamped lecture sections ({dur_str}).")
 
-        st.write("📸 Step 2: Extracting educational visual frames with OpenCV...")
+        st.write("📸 **Step 2/4:** Extracting educational visual frames with OpenCV...")
         visual_manifest = extract_visuals(
             youtube_url=youtube_url,
             analysis_path=ANALYSIS_PATH,
@@ -161,7 +163,7 @@ def run_pipeline(youtube_url: str):
         )
         st.write(f"✓ Extracted {visual_manifest.get('visual_count', 0)} key visual frames.")
 
-        st.write("📝 Step 3: Generating comprehensive study notes...")
+        st.write("📝 **Step 3/4:** Synthesizing structured study notes...")
         notes = generate_notes_from_file(
             input_path=ANALYSIS_PATH,
             json_output=NOTES_PATH,
@@ -170,13 +172,15 @@ def run_pipeline(youtube_url: str):
         )
         st.write("✓ Study notes synthesized successfully.")
 
-        st.write("⚡ Step 4: Indexing lecture into FAISS vector store for Q&A...")
+        st.write("⚡ **Step 4/4:** Indexing lecture into FAISS vector store for Q&A...")
         pipeline = RAGPipeline(
             lecture_id=lecture_id,
             lecture_title=notes.get("title", "Lecture"),
         )
         pipeline.index_lecture(analysis_data=analysis, notes_data=notes, force_reindex=True)
         st.write("✓ Vector index built and cached.")
+
+        status.update(label="✅ Lecture processing complete!", state="complete", expanded=False)
 
         # Save to lecture-isolated store
         service.save_lecture(

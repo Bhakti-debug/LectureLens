@@ -309,6 +309,14 @@ def analyze_youtube_video(youtube_url: str):
 
     # Discover real video duration without full download
     meta = fetch_video_metadata(canonical_url)
+    if "error" in meta:
+        err_lower = meta["error"].lower()
+        if "unavailable" in err_lower or "private" in err_lower or "not found" in err_lower:
+            raise ValueError(
+                "This YouTube video is unavailable or restricted. "
+                "Please verify that the video is public, not deleted, and accessible."
+            )
+
     verified_duration = meta.get("duration", 0.0)
     if verified_duration > 0:
         print(f"Verified video duration: {format_timestamp(verified_duration)} ({verified_duration:.1f}s)")
@@ -330,6 +338,7 @@ def analyze_youtube_video(youtube_url: str):
         response = generate_content_with_retry(
             client=client,
             preferred_model=model,
+            candidate_models=["gemini-3.7-flash", "gemini-2.5-pro"],
             contents=types.Content(
                 parts=[
                     types.Part(
@@ -344,6 +353,12 @@ def analyze_youtube_video(youtube_url: str):
             ),
         )
     except Exception as exc:
+        err_str = str(exc)
+        if "403" in err_str or "PERMISSION_DENIED" in err_str:
+            raise ValueError(
+                "Gemini could not access this video (403 PERMISSION_DENIED). "
+                "The video is likely age-restricted, regionally blocked, or marked private on YouTube."
+            ) from exc
         raise RuntimeError(
             f"Gemini API request failed: {exc}"
         ) from exc

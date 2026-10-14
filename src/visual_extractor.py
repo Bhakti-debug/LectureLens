@@ -37,11 +37,14 @@ def download_video(url, output_path):
 
   
     ydl_opts = {
-        "format": "bestvideo*+bestaudio/best",
+        # Optimize for extraction speed: grab lightweight 360p/480p stream without audio
+        "format": "bestvideo[height<=480][ext=mp4]/bestvideo[height<=720]/best[height<=480]/best",
         "outtmpl": str(output_path),
-        "quiet": False,
+        "quiet": True,
+        "no_warnings": True,
         "noplaylist": True,
         "merge_output_format": "mp4",
+        "socket_timeout": 30,
     }
 
 

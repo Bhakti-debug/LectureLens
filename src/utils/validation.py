@@ -94,18 +94,19 @@ def fetch_video_metadata(url: str) -> Dict[str, Any]:
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
             info = ydl.extract_info(url, download=False)
             if not info:
-                return {}
+                return {"error": "Could not extract video info"}
 
             return {
                 "id": info.get("id"),
                 "title": info.get("title", "Educational Lecture"),
-                "duration": float(info.get("duration", 0.0)),
+                "duration": float(info.get("duration", 0.0) or 0.0),
                 "channel": info.get("uploader", ""),
                 "description": info.get("description", ""),
             }
     except Exception as e:
-        logger.warning(f"Could not extract online video metadata: {e}")
-        return {}
+        err_msg = str(e)
+        logger.warning(f"Could not extract online video metadata: {err_msg}")
+        return {"error": err_msg}
 
 
 def format_timestamp(seconds: float) -> str:
