@@ -1,0 +1,66 @@
+{
+  "video_summary": "This introductory video defines neuroscience as the multidisciplinary science studying how the brain and nervous system work. It outlines the role of neuroscientists in understanding nervous system disorders and details the main subfields of neuroscience: developmental, molecular, cellular, systems, behavioural, and cognitive neuroscience.",
+  "visual_count": 6,
+  "visuals": [
+    {
+      "section_number": 1,
+      "section_title": "Introduction to Neuroscience",
+      "visual_index": 1,
+      "timestamp": 5.0,
+      "type": "slide",
+      "description": "Title slide introducing the topic over an illustration of interconnected neurons with glowing synaptic terminals.",
+      "visible_text": "WHAT IS NEUROSCIENCE?",
+      "image": "C:\\Users\\bhakt\\OneDrive\\Desktop\\Lecturelens - Copy\\data\\visuals\\section_01_visual_01_5s_Introduction to Neuroscience.jpg"
+    },
+    {
+      "section_number": 1,
+      "section_title": "Introduction to Neuroscience",
+      "visual_index": 2,
+      "timestamp": 27.0,
+      "type": "diagram",
+      "description": "A thought bubble mind map displaying various questions about brain function surrounding the central label NEUROSCIENCE.",
+      "visible_text": "HOW DOES MY BRAIN WORK? How am I able to learn new things? How am I able to see? How am I able to feel? How can I remember and forget things? NEUROSCIENCE",
+      "image": "C:\\Users\\bhakt\\OneDrive\\Desktop\\Lecturelens - Copy\\data\\visuals\\section_01_visual_02_27s_Introduction to Neuroscience.jpg"
+    },
+    {
+      "section_number": 2,
+      "section_title": "Subfields of Neuroscience: Developmental and Molecular",
+      "visual_index": 1,
+      "timestamp": 43.0,
+      "type": "slide",
+      "description": "Slide outlining the research objectives of neuroscientists.",
+      "visible_text": "RESEARCH by NEUROSCIENTISTS\n- Understand nervous system disorders",
+      "image": "C:\\Users\\bhakt\\OneDrive\\Desktop\\Lecturelens - Copy\\data\\visuals\\section_02_visual_01_43s_Subfields of Neuroscience_ Developmental and Molecular.jpg"
+    },
+    {
+      "section_number": 2,
+      "section_title": "Subfields of Neuroscience: Developmental and Molecular",
+      "visual_index": 2,
+      "timestamp": 109.0,
+      "type": "diagram",
+      "description": "A branching diagram mapping branches of neuroscience stemming from the core term NEUROSCIENCE, highlighting developmental and molecular neuroscience.",
+      "visible_text": "RESEARCH by NEUROSCIENTISTS\n- Understand nervous system disorders\nNEUROSCIENCE\nDevelopmental Neuroscience - Development of the brain\nMolecular Neuroscience - Molecular level processes",
+      "image": "C:\\Users\\bhakt\\OneDrive\\Desktop\\Lecturelens - Copy\\data\\visuals\\section_02_visual_02_109s_Subfields of Neuroscience_ Developmental and Molecular.jpg"
+    },
+    {
+      "section_number": 3,
+      "section_title": "Subfields of Neuroscience: Cellular, Systems, Behavioural, and Cognitive",
+      "visual_index": 1,
+      "timestamp": 139.5,
+      "type": "diagram",
+      "description": "A complete branch chart categorizing six core disciplines of neuroscience research with brief definitions.",
+      "visible_text": "RESEARCH by NEUROSCIENTISTS\n- Understand nervous system disorders\nNEUROSCIENCE\nDevelopmental Neuroscience - Development of the brain\nMolecular Neuroscience - Molecular level processes\nCellular Neuroscience - Neurons, Glial cells and their function\nSystems Neuroscience - Neural Circuit functioning\nBehavioural Neuroscience - Neural mechanisms of behaviour\nCognitive Neuroscience - Neural mechanisms of mental processes",
+      "image": "C:\\Users\\bhakt\\OneDrive\\Desktop\\Lecturelens - Copy\\data\\visuals\\section_03_visual_01_139s_Subfields of Neuroscience_ Cellular_ Systems_ Behavioural_ a.jpg"
+    },
+    {
+      "section_number": 4,
+      "section_title": "Future of Neuroscience Research",
+      "visual_index": 1,
+      "timestamp": 139.5,
+      "type": "slide",
+      "description": "Concluding slide emphasizing ongoing and future research opportunities in the field.",
+      "visible_text": "There is more to research and more to learn!",
+      "image": "C:\\Users\\bhakt\\OneDrive\\Desktop\\Lecturelens - Copy\\data\\visuals\\section_04_visual_01_139s_Future of Neuroscience Research.jpg"
+    }
+  ]
+}

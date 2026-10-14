@@ -1,225 +1,162 @@
-# Introduction to Node.js and Core Concepts
+# Introduction to Neuroscience: Core Concepts and Major Subfields
 
 ## Overview
 
-This lecture provides a foundational overview of Node.js, explaining its architectural roots, how JavaScript traditionally operates in web browsers via engines like V8, and how creator Ryan Dahl embedded Chrome's V8 engine in C++ to bring JavaScript to the backend. It includes live terminal REPL demonstrations and highlights the official definition and prerequisites for learning Node.js.
+This lecture provides an introduction to neuroscience, defining it as the multidisciplinary study of the brain and nervous system. It outlines the clinical and scientific goals of neuroscientists in understanding nervous system disorders and breaks down the field into six fundamental subdisciplines: developmental, molecular, cellular, systems, behavioural, and cognitive neuroscience.
 
-**Duration:** 07:44
+**Duration:** 02:20
 
-## 1. Understanding JavaScript & JS Engines `[00:31 - 02:25]`
-
-### Explanation
-
-JavaScript was originally created as a client-side scripting language intended to make web pages interactive inside web browsers. Browsers cannot run JavaScript directly without a dedicated component called a JavaScript Engine. When users run a web browser, an embedded engine interprets and executes JavaScript scripts. Different browser vendors use different engines: Google Chrome uses the V8 engine, Mozilla Firefox uses SpiderMonkey, and Apple Safari uses JavaScriptCore. Google Chrome's V8 engine is currently the most popular and widely adopted JavaScript engine.
-
-### Key Concepts
-
-- JavaScript Engine
-- Chrome V8 Engine
-- SpiderMonkey
-- JavaScriptCore
-- Client-Side Execution
-
-### Examples
-
-- Google Chrome running the V8 engine
-- Mozilla Firefox running SpiderMonkey
-- Apple Safari running JavaScriptCore
-
-### Visual Explanation
-
-The lecture slides depict how JavaScript executes inside a web browser sandbox. A comparative diagram maps major web browsers to their respective JavaScript engines (Chrome with V8, Firefox with SpiderMonkey, and Safari with Apple's JS Engine), followed by a slide highlighting V8 as the industry standard.
-
-### Important Visual Text
-
-- `What is Node.JS?`
-- `JS - Javascript Engine`
-- `Javascript Engine - Chrome (V8), Firefox (SpiderMonkey), Safari (Apple JS Engine)`
-- `Javascript Engine V8 - Most Popular Engine`
-
-### Visuals
-
-**Slide at 00:35**
-
-![slide](../visuals/section_01_visual_01_35s_Understanding JavaScript _ JS Engines.jpg)
-
-*Title slide introducing the topic 'What is Node.JS?' featuring the Node.js logo.*
-
-**Slide at 01:05**
-
-![slide](../visuals/section_01_visual_02_65s_Understanding JavaScript _ JS Engines.jpg)
-
-*Illustration showing JavaScript code executing inside a web browser window using an embedded JavaScript engine.*
-
-**Diagram at 01:59**
-
-![diagram](../visuals/section_01_visual_03_119s_Understanding JavaScript _ JS Engines.jpg)
-
-*Diagram displaying icons of major web browsers alongside their corresponding JavaScript engine logos.*
-
-**Slide at 02:25**
-
-![slide](../visuals/section_01_visual_04_145s_Understanding JavaScript _ JS Engines.jpg)
-
-*Graphic highlighting the V8 Engine as the most popular JavaScript engine.*
-
-### Key Takeaway
-
-> Web browsers rely on specialized JavaScript engines—most notably Google Chrome's V8—to parse and execute client-side JavaScript code.
-
-## 2. Creation of Node.js and Core Capabilities `[02:25 - 04:39]`
+## 1. Introduction to Neuroscience and Fundamental Questions `[00:00 - 00:33]`
 
 ### Explanation
 
-Developer Ryan Dahl created Node.js by taking Google Chrome's open-source V8 engine and wrapping it inside C++ code. Because C++ can directly interact with the underlying hardware and host operating system, binding V8 with C++ allowed JavaScript to run outside the browser sandbox. This architecture gives JavaScript access to native machine capabilities, such as direct filesystem handling, read/write operations, and memory management, enabling developers to build server-side applications and web servers entirely in JavaScript.
+Neuroscience is a centuries-old, multidisciplinary branch of science dedicated to deciphering the mechanics of the brain and nervous system. The discipline addresses core questions about how biological mechanisms translate into psychological and cognitive functions, specifically exploring how humans perceive external stimuli (vision, audition, somatosensation), acquire and store knowledge, recall or forget memories, and experience emotional states.
 
 ### Key Concepts
 
-- Ryan Dahl
-- V8 Engine Binding with C++
-- Out-of-Browser JavaScript
-- Native OS / File System Access
-- Server-Side JavaScript
+- Neuroscience
+- Multidisciplinary science
+- Sensory perception
+- Memory formation and forgetting
+- Emotional processing
 
 ### Examples
 
-- Interacting directly with the host operating system filesystem
-- Building standalone web backend servers using JavaScript
+- Sensory perception, such as seeing and feeling external stimuli
+- Cognitive processes, such as learning new skills and acquiring knowledge
+- Memory dynamics, including encoding, retention, and forgetting
 
 ### Visual Explanation
 
-A structural flowchart illustrates Ryan Dahl combining Chrome's V8 JavaScript engine with C++ to produce Node.js. A subsequent summary slide lists key Node.js capabilities, emphasizing out-of-browser execution and server-side application development.
+The lecture opens with a title slide showing an illustration of interconnected neurons with glowing synaptic terminals. It then presents a mind map structured with thought bubbles surrounding the central label 'NEUROSCIENCE', visualizing fundamental inquiries regarding perception, learning, and memory formation.
 
 ### Important Visual Text
 
-- `Javascript Engine - Ryan Dahl - V8 -> C++ -> Node.js`
-- `NodeJS`
-- `- You can run JS outside of the browser`
-- `- Javascript can talk to native machine because of c++`
-- `- You can create webservers in Javascript Language`
+- `WHAT IS NEUROSCIENCE?`
+- `HOW DOES MY BRAIN WORK?`
+- `How am I able to learn new things?`
+- `How am I able to see?`
+- `How am I able to feel?`
+- `How can I remember and forget things?`
+- `NEUROSCIENCE`
 
 ### Visuals
 
-**Diagram at 02:46**
+**Slide at 00:05**
 
-![diagram](../visuals/section_02_visual_01_166s_Creation of Node_js and Core Capabilities.jpg)
+![slide](../visuals/section_01_visual_01_5s_Introduction to Neuroscience.jpg)
 
-*Flowchart diagram illustrating Ryan Dahl combining Chrome's V8 engine with C++ to produce Node.js.*
+*Title slide introducing the topic over an illustration of interconnected neurons with glowing synaptic terminals.*
 
-**Slide at 03:35**
+**Diagram at 00:27**
 
-![slide](../visuals/section_02_visual_02_215s_Creation of Node_js and Core Capabilities.jpg)
+![diagram](../visuals/section_01_visual_02_27s_Introduction to Neuroscience.jpg)
 
-*Summary slide listing key capabilities provided by Node.js.*
+*A thought bubble mind map displaying various questions about brain function surrounding the central label NEUROSCIENCE.*
 
 ### Key Takeaway
 
-> By integrating Chrome's V8 engine with C++, Ryan Dahl enabled JavaScript to run outside the browser and perform host machine-level server operations.
+> Neuroscience investigates how the biological structures of the brain and nervous system produce sensory perception, learning, memory, and emotions.
 
-## 3. Defining Node.js & Practical Demonstration `[04:39 - 06:25]`
+## 2. Role of Neuroscientists: Developmental and Molecular Neuroscience `[00:33 - 01:50]`
 
 ### Explanation
 
-Node.js is defined specifically as a JavaScript Runtime Environment—it is neither a programming language, nor a framework, nor a library. While browser developer consoles allow inline JavaScript execution, standard command-line shells (like zsh or bash) fail to recognize raw JavaScript statements natively. By launching the `node` command in the terminal, users start the interactive Node.js REPL (Read-Eval-Print Loop) environment, which parses and executes JavaScript directly on the operating system.
+Neuroscientists study the structural and functional complexities of the brain with the vital medical objective of diagnosing, understanding, and treating nervous system disorders. Because of the brain's immense complexity, the discipline is organized into specialized branches. Developmental neuroscience examines the morphological and functional changes of the brain across the lifespan, including how it initially forms and grows. Molecular neuroscience operates at the biochemical level, focusing on the specific molecules, signaling pathways, and chemical processes essential to brain operation.
 
 ### Key Concepts
 
-- JavaScript Runtime Environment
-- Terminal Shell Execution
-- Node.js Interactive REPL
+- Neuroscientists
+- Nervous system disorders
+- Developmental neuroscience
+- Molecular neuroscience
 
 ### Examples
 
-- Executing expressions (`console.log('Hello')`, `2+3`) in Chrome DevTools Console
-- Failing to execute raw JS directly in terminal shell versus successfully running JS commands inside the `node` terminal shell REPL
+- Investigating the growth trajectories and structural changes of the brain during development
+- Analyzing biochemical signaling pathways and molecular constituents within nervous tissue
+- Developing diagnostic criteria and therapies for neurological conditions
 
 ### Visual Explanation
 
-The video demonstrates running simple JavaScript code in the Chrome DevTools Console, followed by a OS Terminal session. In the terminal, raw JS initially throws a command syntax error until the user enters `node` (launching `Welcome to Node.js v16.14.2.`), allowing direct REPL code execution.
+A slide outlines the primary clinical mission of neuroscientist research regarding nervous system disorders. This connects to a hierarchical branching diagram radiating outward from 'NEUROSCIENCE', illustrating developmental and molecular neuroscience as distinct research branches with brief definitions.
 
 ### Important Visual Text
 
-- `What is NodeJS? NodeJS is a Runtime Env. for Javascript`
-- `console.log('Hello')`
-- `2+3`
-- `zsh: unknown file attribute: H`
-- `% node`
-- `Welcome to Node.js v16.14.2.`
-- `> console.log('Hello')`
-- `> 2+5`
+- `RESEARCH by NEUROSCIENTISTS`
+- `- Understand nervous system disorders`
+- `NEUROSCIENCE`
+- `Developmental Neuroscience - Development of the brain`
+- `Molecular Neuroscience - Molecular level processes`
 
 ### Visuals
 
-**Slide at 04:40**
+**Slide at 00:43**
 
-![slide](../visuals/section_03_visual_01_280s_Defining Node_js _ Practical Demonstration.jpg)
+![slide](../visuals/section_02_visual_01_43s_Subfields of Neuroscience_ Developmental and Molecular.jpg)
 
-*Definition slide stating that Node.js is a runtime environment for JavaScript.*
+*Slide outlining the research objectives of neuroscientists.*
 
-**Demonstration at 05:01**
+**Diagram at 01:49**
 
-![demonstration](../visuals/section_03_visual_02_301s_Defining Node_js _ Practical Demonstration.jpg)
+![diagram](../visuals/section_02_visual_02_109s_Subfields of Neuroscience_ Developmental and Molecular.jpg)
 
-*Chrome DevTools Console showing JavaScript code execution (e.g., console.log and arithmetic).*
-
-**Demonstration at 05:43**
-
-![demonstration](../visuals/section_03_visual_03_343s_Defining Node_js _ Practical Demonstration.jpg)
-
-*Mac OS Terminal demonstrating an error when running raw JS code, followed by launching `node` to enter the Node.js interactive REPL.*
+*A branching diagram mapping branches of neuroscience stemming from the core term NEUROSCIENCE, highlighting developmental and molecular neuroscience.*
 
 ### Key Takeaway
 
-> Node.js acts as an interactive runtime environment that allows developers to run JavaScript outside the browser via the terminal.
+> To address complex nervous system disorders, neuroscience divides brain research across specialized levels, beginning with developmental timelines and molecular processes.
 
-## 4. Official Node.js Definition & Prerequisites `[06:25 - 07:44]`
+## 3. Cellular, Systems, Behavioural, Cognitive Neuroscience, and Future Horizons `[01:50 - 02:20]`
 
 ### Explanation
 
-According to the official documentation on nodejs.org, 'Node.js is an open-source, cross-platform JavaScript runtime environment.' Because Node.js provides the environment to execute standard JavaScript code outside the browser, having a thorough understanding of core JavaScript fundamentals is a mandatory prerequisite before learning Node.js concepts or backend development.
+The analysis of the brain scales up across cellular, circuit, and systemic tiers. Cellular neuroscience focuses on individual cells—both neurons and glial cells—and how their functions combine to establish neural circuits. Systems neuroscience examines how these neural circuits function collaboratively as integrated networks. Behavioural neuroscience investigates the underlying neural mechanisms that govern physical actions and behaviors. Cognitive neuroscience studies the neural substrates of higher-order mental processes, analyzing how brain activity gives rise to the mind and conscious thought. Finally, the lecture highlights that neuroscience remains in an active phase of discovery, as the brain's true complexity far exceeds current understanding.
 
 ### Key Concepts
 
-- Open-source
-- Cross-platform Runtime
-- Core JavaScript Prerequisites
+- Cellular neuroscience
+- Glial cells
+- Neural circuits
+- Systems neuroscience
+- Behavioural neuroscience
+- Cognitive neuroscience
+- Cognition
 
 ### Examples
 
-- Consulting official documentation at nodejs.org
-- Mastering fundamental JS concepts before building server-side applications
+- Studying the physiological roles and interactions of neurons and glial cells
+- Mapping circuit networks to understand coordinated systems-level activity
+- Correlating specific neural pathways with behavioral patterns and motor outputs
+- Investigating how neural firing patterns generate conscious mental processes and cognition
 
 ### Visual Explanation
 
-A browser screenshot displays the official Node.js website (nodejs.org) featuring the highlighted formal definition text. This is followed by a slide showing recommended JavaScript prerequisite topics.
+A comprehensive tree diagram categorizes all six major neuroscience disciplines branching from 'NEUROSCIENCE', providing definitions for cellular, systems, behavioural, and cognitive subfields. The lecture concludes with a slide emphasizing the extensive scope of undiscovered knowledge in the field.
 
 ### Important Visual Text
 
-- `Node.js® is an open-source, cross-platform JavaScript runtime environment.`
-- `Ultimate Javascript Tutorials - Piyush Garg`
+- `Cellular Neuroscience - Neurons, Glial cells and their function`
+- `Systems Neuroscience - Neural Circuit functioning`
+- `Behavioural Neuroscience - Neural mechanisms of behaviour`
+- `Cognitive Neuroscience - Neural mechanisms of mental processes`
+- `There is more to research and more to learn!`
 
 ### Visuals
 
-**Screenshot at 06:38**
+**Diagram at 02:19**
 
-![screenshot](../visuals/section_04_visual_01_398s_Official Node_js Definition _ Prerequisites.jpg)
+![diagram](../visuals/section_03_visual_01_139s_Subfields of Neuroscience_ Cellular_ Systems_ Behavioural_ a.jpg)
 
-*Official Node.js website (nodejs.org) homepage highlighting the formal definition.*
-
-**Screenshot at 07:02**
-
-![screenshot](../visuals/section_04_visual_02_422s_Official Node_js Definition _ Prerequisites.jpg)
-
-*YouTube playlist page for 'Ultimate Javascript Tutorials' recommending JS prerequisite topics.*
+*A complete branch chart categorizing six core disciplines of neuroscience research with brief definitions.*
 
 ### Key Takeaway
 
-> Node.js is an open-source, cross-platform runtime for running JavaScript, requiring strong foundational knowledge of core JavaScript.
+> Neuroscience encompasses structural and functional levels from single cells and neural circuits to complex behavior and cognition, with significant frontiers still awaiting discovery.
 
 ## Final Takeaways
 
-- Node.js is an open-source, cross-platform JavaScript runtime environment, not a language, framework, or library.
-- Created by Ryan Dahl, Node.js combines Google Chrome's V8 engine with C++ to execute JavaScript outside of web browsers.
-- Through C++ bindings, Node.js grants JavaScript access to host operating system features like filesystems and memory management.
-- The `node` terminal command launches an interactive REPL shell for running JavaScript scripts locally.
-- A solid background in core JavaScript programming is essential before learning Node.js.
+- Neuroscience is a multidisciplinary science addressing both fundamental questions of brain function and the diagnosis and treatment of nervous system disorders.
+- Brain research is hierarchically organized across six key subdisciplines: developmental, molecular, cellular, systems, behavioural, and cognitive neuroscience.
+- The subdisciplines bridge multiple scales of analysis, moving from individual molecules, neurons, and glia up to neural circuits, observable behavior, and complex mental processes.
+- Given the profound complexity of the human brain, neuroscience is a rapidly evolving field with many fundamental discoveries yet to be made.

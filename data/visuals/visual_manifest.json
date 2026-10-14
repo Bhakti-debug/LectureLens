@@ -1,116 +1,56 @@
 {
-  "video_summary": "This video introduces Node.js, explaining what it is, how it was created, and why it exists. The instructor breaks down how JavaScript traditionally runs inside browsers using JavaScript engines like V8, and explains how Ryan Dahl combined Chrome's V8 engine with C++ to create Node.js. The lecture demonstrates running JavaScript code in Chrome DevTools versus the Node.js terminal REPL, concluding with the official definition of Node.js as an open-source, cross-platform JavaScript runtime environment.",
-  "visual_count": 11,
+  "video_summary": "This video provides an introductory overview of neuroscience, the multidisciplinary scientific study of how the brain and nervous system operate. It highlights fundamental questions regarding brain function and outlines several key subfields of neuroscience research: developmental, molecular, cellular, systems, behavioral, and cognitive neuroscience.",
+  "visual_count": 5,
   "visuals": [
     {
       "section_number": 1,
-      "section_title": "Understanding JavaScript & JS Engines",
+      "section_title": "Introduction to Neuroscience",
       "visual_index": 1,
-      "timestamp": 35.0,
+      "timestamp": 4.0,
       "type": "slide",
-      "description": "Title slide introducing the topic 'What is Node.JS?' featuring the Node.js logo.",
-      "visible_text": "What is Node.JS?",
-      "image": "C:\\Users\\bhakt\\OneDrive\\Desktop\\Lecturelens\\data\\visuals\\section_01_visual_01_35s_Understanding JavaScript _ JS Engines.jpg"
+      "description": "Title slide with a 3D digital rendering of neurons and synapses in the background.",
+      "visible_text": "WHAT IS NEUROSCIENCE?",
+      "image": "C:\\Users\\bhakt\\OneDrive\\Desktop\\Lecturelens - Copy\\data\\visuals\\section_01_visual_01_4s_Introduction to Neuroscience.jpg"
     },
     {
       "section_number": 1,
-      "section_title": "Understanding JavaScript & JS Engines",
+      "section_title": "Introduction to Neuroscience",
       "visual_index": 2,
-      "timestamp": 65.0,
-      "type": "slide",
-      "description": "Illustration showing JavaScript code executing inside a web browser window using an embedded JavaScript engine.",
-      "visible_text": "JS - Javascript Engine",
-      "image": "C:\\Users\\bhakt\\OneDrive\\Desktop\\Lecturelens\\data\\visuals\\section_01_visual_02_65s_Understanding JavaScript _ JS Engines.jpg"
-    },
-    {
-      "section_number": 1,
-      "section_title": "Understanding JavaScript & JS Engines",
-      "visual_index": 3,
-      "timestamp": 119.0,
+      "timestamp": 26.0,
       "type": "diagram",
-      "description": "Diagram displaying icons of major web browsers alongside their corresponding JavaScript engine logos.",
-      "visible_text": "Javascript Engine - Chrome (V8), Firefox (SpiderMonkey), Safari (Apple JS Engine)",
-      "image": "C:\\Users\\bhakt\\OneDrive\\Desktop\\Lecturelens\\data\\visuals\\section_01_visual_03_119s_Understanding JavaScript _ JS Engines.jpg"
-    },
-    {
-      "section_number": 1,
-      "section_title": "Understanding JavaScript & JS Engines",
-      "visual_index": 4,
-      "timestamp": 145.0,
-      "type": "slide",
-      "description": "Graphic highlighting the V8 Engine as the most popular JavaScript engine.",
-      "visible_text": "Javascript Engine V8 - Most Popular Engine",
-      "image": "C:\\Users\\bhakt\\OneDrive\\Desktop\\Lecturelens\\data\\visuals\\section_01_visual_04_145s_Understanding JavaScript _ JS Engines.jpg"
+      "description": "Thought bubbles presenting fundamental questions about brain function, leading to the term 'NEUROSCIENCE'.",
+      "visible_text": "HOW DOES MY BRAIN WORK? How am I able to see? How can I remember and forget things? How am I able to learn new things? How am I able to feel? NEUROSCIENCE",
+      "image": "C:\\Users\\bhakt\\OneDrive\\Desktop\\Lecturelens - Copy\\data\\visuals\\section_01_visual_02_26s_Introduction to Neuroscience.jpg"
     },
     {
       "section_number": 2,
-      "section_title": "Creation of Node.js and Core Capabilities",
+      "section_title": "Subfields of Neuroscience Research",
       "visual_index": 1,
-      "timestamp": 166.0,
-      "type": "diagram",
-      "description": "Flowchart diagram illustrating Ryan Dahl combining Chrome's V8 engine with C++ to produce Node.js.",
-      "visible_text": "Javascript Engine - Ryan Dahl - V8 -> C++ -> Node.js",
-      "image": "C:\\Users\\bhakt\\OneDrive\\Desktop\\Lecturelens\\data\\visuals\\section_02_visual_01_166s_Creation of Node_js and Core Capabilities.jpg"
+      "timestamp": 43.0,
+      "type": "slide",
+      "description": "Slide listing the primary research goal of neuroscientists regarding disorders.",
+      "visible_text": "RESEARCH by NEUROSCIENTISTS\n- Understand nervous system disorders",
+      "image": "C:\\Users\\bhakt\\OneDrive\\Desktop\\Lecturelens - Copy\\data\\visuals\\section_02_visual_01_43s_Subfields of Neuroscience Research.jpg"
     },
     {
       "section_number": 2,
-      "section_title": "Creation of Node.js and Core Capabilities",
+      "section_title": "Subfields of Neuroscience Research",
       "visual_index": 2,
-      "timestamp": 215.0,
-      "type": "slide",
-      "description": "Summary slide listing key capabilities provided by Node.js.",
-      "visible_text": "NodeJS\n- You can run JS outside of the browser\n- Javascript can talk to native machine because of c++\n- You can create webservers in Javascript Language",
-      "image": "C:\\Users\\bhakt\\OneDrive\\Desktop\\Lecturelens\\data\\visuals\\section_02_visual_02_215s_Creation of Node_js and Core Capabilities.jpg"
+      "timestamp": 105.0,
+      "type": "diagram",
+      "description": "Branching tree diagram detailing the major subfields of neuroscience research.",
+      "visible_text": "RESEARCH by NEUROSCIENTISTS\n- Understand nervous system disorders\n\nNEUROSCIENCE\n- Developmental Neuroscience: Development of the brain\n- Molecular Neuroscience: Molecular level processes\n- Cellular Neuroscience: Neurons, Glial cells and their function\n- Systems Neuroscience: Neural Circuit functioning\n- Behavioural Neuroscience: Neural mechanisms of behaviour\n- Cognitive Neuroscience: Neural mechanisms of mental processes",
+      "image": "C:\\Users\\bhakt\\OneDrive\\Desktop\\Lecturelens - Copy\\data\\visuals\\section_02_visual_02_105s_Subfields of Neuroscience Research.jpg"
     },
     {
       "section_number": 3,
-      "section_title": "Defining Node.js & Practical Demonstration",
+      "section_title": "Future Horizons in Neuroscience",
       "visual_index": 1,
-      "timestamp": 280.0,
+      "timestamp": 139.5,
       "type": "slide",
-      "description": "Definition slide stating that Node.js is a runtime environment for JavaScript.",
-      "visible_text": "What is NodeJS?\nNodeJS is a Runtime Env. for Javascript",
-      "image": "C:\\Users\\bhakt\\OneDrive\\Desktop\\Lecturelens\\data\\visuals\\section_03_visual_01_280s_Defining Node_js _ Practical Demonstration.jpg"
-    },
-    {
-      "section_number": 3,
-      "section_title": "Defining Node.js & Practical Demonstration",
-      "visual_index": 2,
-      "timestamp": 301.0,
-      "type": "demonstration",
-      "description": "Chrome DevTools Console showing JavaScript code execution (e.g., console.log and arithmetic).",
-      "visible_text": "console.log('Hello')\nHello\n2+3\n5",
-      "image": "C:\\Users\\bhakt\\OneDrive\\Desktop\\Lecturelens\\data\\visuals\\section_03_visual_02_301s_Defining Node_js _ Practical Demonstration.jpg"
-    },
-    {
-      "section_number": 3,
-      "section_title": "Defining Node.js & Practical Demonstration",
-      "visual_index": 3,
-      "timestamp": 343.0,
-      "type": "demonstration",
-      "description": "Mac OS Terminal demonstrating an error when running raw JS code, followed by launching `node` to enter the Node.js interactive REPL.",
-      "visible_text": "zsh: unknown file attribute: H\n% node\nWelcome to Node.js v16.14.2.\n> console.log('Hello')\nHello\n> 2+5\n7\n> console.log('Hello from JS')\nHello from JS",
-      "image": "C:\\Users\\bhakt\\OneDrive\\Desktop\\Lecturelens\\data\\visuals\\section_03_visual_03_343s_Defining Node_js _ Practical Demonstration.jpg"
-    },
-    {
-      "section_number": 4,
-      "section_title": "Official Node.js Definition & Prerequisites",
-      "visual_index": 1,
-      "timestamp": 398.0,
-      "type": "screenshot",
-      "description": "Official Node.js website (nodejs.org) homepage highlighting the formal definition.",
-      "visible_text": "Node.js® is an open-source, cross-platform JavaScript runtime environment.",
-      "image": "C:\\Users\\bhakt\\OneDrive\\Desktop\\Lecturelens\\data\\visuals\\section_04_visual_01_398s_Official Node_js Definition _ Prerequisites.jpg"
-    },
-    {
-      "section_number": 4,
-      "section_title": "Official Node.js Definition & Prerequisites",
-      "visual_index": 2,
-      "timestamp": 422.0,
-      "type": "screenshot",
-      "description": "YouTube playlist page for 'Ultimate Javascript Tutorials' recommending JS prerequisite topics.",
-      "visible_text": "Ultimate Javascript Tutorials - Piyush Garg",
-      "image": "C:\\Users\\bhakt\\OneDrive\\Desktop\\Lecturelens\\data\\visuals\\section_04_visual_02_422s_Official Node_js Definition _ Prerequisites.jpg"
+      "description": "Concluding slide highlighting the ongoing expansion of neuroscience research.",
+      "visible_text": "There is more to research and more to learn!",
+      "image": "C:\\Users\\bhakt\\OneDrive\\Desktop\\Lecturelens - Copy\\data\\visuals\\section_03_visual_01_139s_Future Horizons in Neuroscience.jpg"
     }
   ]
 }

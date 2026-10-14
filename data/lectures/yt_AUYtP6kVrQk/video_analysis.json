@@ -1,0 +1,127 @@
+{
+  "video_summary": "This introductory video defines neuroscience as the multidisciplinary science studying how the brain and nervous system work. It outlines the role of neuroscientists in understanding nervous system disorders and details the main subfields of neuroscience: developmental, molecular, cellular, systems, behavioural, and cognitive neuroscience.",
+  "sections": [
+    {
+      "start_time": 0.0,
+      "end_time": 33.0,
+      "title": "Introduction to Neuroscience",
+      "spoken_content": [
+        "Neuroscience is a centuries-old branch of science focused on understanding how the brain works.",
+        "It aims to answer fundamental questions about how humans perceive stimuli (seeing, hearing, feeling), learn new things, form memories, forget, and experience emotions.",
+        "Understanding these biological and psychological processes is the central goal of the multidisciplinary field of neuroscience."
+      ],
+      "visual_content": [
+        {
+          "timestamp": 5.0,
+          "type": "slide",
+          "description": "Title slide introducing the topic over an illustration of interconnected neurons with glowing synaptic terminals.",
+          "visible_text": "WHAT IS NEUROSCIENCE?"
+        },
+        {
+          "timestamp": 27.0,
+          "type": "diagram",
+          "description": "A thought bubble mind map displaying various questions about brain function surrounding the central label NEUROSCIENCE.",
+          "visible_text": "HOW DOES MY BRAIN WORK? How am I able to learn new things? How am I able to see? How am I able to feel? How can I remember and forget things? NEUROSCIENCE"
+        }
+      ],
+      "audio_visual_relationship": [
+        "The narrator questions how the brain allows us to see, feel, learn, and remember while matching speech bubbles appear sequentially on screen, culminating in the definition of neuroscience."
+      ],
+      "key_concepts": [
+        "Neuroscience",
+        "Brain function",
+        "Multidisciplinary science"
+      ]
+    },
+    {
+      "start_time": 33.0,
+      "end_time": 110.0,
+      "title": "Subfields of Neuroscience: Developmental and Molecular",
+      "spoken_content": [
+        "Researchers in neuroscience are called neuroscientists, who study the brain's complexities to understand, diagnose, and treat nervous system disorders.",
+        "Due to the vast complexity of the brain, neuroscience is divided into several specialized branches.",
+        "Developmental neuroscience examines how the brain forms, grows, and changes over time.",
+        "Molecular neuroscience focuses on the molecular-level processes and the role of various molecules within the brain."
+      ],
+      "visual_content": [
+        {
+          "timestamp": 43.0,
+          "type": "slide",
+          "description": "Slide outlining the research objectives of neuroscientists.",
+          "visible_text": "RESEARCH by NEUROSCIENTISTS\n- Understand nervous system disorders"
+        },
+        {
+          "timestamp": 109.0,
+          "type": "diagram",
+          "description": "A branching diagram mapping branches of neuroscience stemming from the core term NEUROSCIENCE, highlighting developmental and molecular neuroscience.",
+          "visible_text": "RESEARCH by NEUROSCIENTISTS\n- Understand nervous system disorders\nNEUROSCIENCE\nDevelopmental Neuroscience - Development of the brain\nMolecular Neuroscience - Molecular level processes"
+        }
+      ],
+      "audio_visual_relationship": [
+        "The speaker introduces why the field is subdivided to tackle brain complexity, while arrows branch out from the word 'NEUROSCIENCE' to list developmental and molecular neuroscience with their descriptions."
+      ],
+      "key_concepts": [
+        "Neuroscientists",
+        "Nervous system disorders",
+        "Developmental neuroscience",
+        "Molecular neuroscience"
+      ]
+    },
+    {
+      "start_time": 110.0,
+      "end_time": 140.0,
+      "title": "Subfields of Neuroscience: Cellular, Systems, Behavioural, and Cognitive",
+      "spoken_content": [
+        "Cellular neuroscience investigates neurons, glial cells, their functions, and how they form neural circuits.",
+        "Systems neuroscience explores how neural circuits operate and function as integrated networks.",
+        "Behavioural neuroscience studies the neural mechanisms underpinning behavior and how neural connections integrate to dictate actions.",
+        "Cognitive neuroscience examines the neural mechanisms underlying mental processes and cognition, exploring how brain activity produces the mind."
+      ],
+      "visual_content": [
+        {
+          "timestamp": 139.5,
+          "type": "diagram",
+          "description": "A complete branch chart categorizing six core disciplines of neuroscience research with brief definitions.",
+          "visible_text": "RESEARCH by NEUROSCIENTISTS\n- Understand nervous system disorders\nNEUROSCIENCE\nDevelopmental Neuroscience - Development of the brain\nMolecular Neuroscience - Molecular level processes\nCellular Neuroscience - Neurons, Glial cells and their function\nSystems Neuroscience - Neural Circuit functioning\nBehavioural Neuroscience - Neural mechanisms of behaviour\nCognitive Neuroscience - Neural mechanisms of mental processes"
+        }
+      ],
+      "audio_visual_relationship": [
+        "As the narrator systematically defines cellular, systems, behavioural, and cognitive neuroscience, corresponding branches and bullet points appear on the visual tree diagram."
+      ],
+      "key_concepts": [
+        "Cellular neuroscience",
+        "Glial cells",
+        "Systems neuroscience",
+        "Neural circuits",
+        "Behavioural neuroscience",
+        "Cognitive neuroscience",
+        "Cognition"
+      ]
+    },
+    {
+      "start_time": 139.0,
+      "end_time": 140.0,
+      "title": "Future of Neuroscience Research",
+      "spoken_content": [
+        "Research in neuroscience is vast and rapidly progressing.",
+        "Current understanding of the brain remains small compared to its actual complexity, leaving many discoveries yet to be made."
+      ],
+      "visual_content": [
+        {
+          "timestamp": 139.5,
+          "type": "slide",
+          "description": "Concluding slide emphasizing ongoing and future research opportunities in the field.",
+          "visible_text": "There is more to research and more to learn!"
+        }
+      ],
+      "audio_visual_relationship": [
+        "The speaker reflects on the horizon of brain research while the concluding slide displays the message about continued learning and research."
+      ],
+      "key_concepts": [
+        "Brain complexity",
+        "Neuroscience research"
+      ]
+    }
+  ],
+  "verified_duration_seconds": 140.0
+}
