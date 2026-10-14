@@ -338,7 +338,7 @@ def analyze_youtube_video(youtube_url: str):
         response = generate_content_with_retry(
             client=client,
             preferred_model=model,
-            candidate_models=["gemini-3.7-flash", "gemini-2.5-pro"],
+            candidate_models=["gemini-3-flash-preview", "gemini-3.5-flash"],
             contents=types.Content(
                 parts=[
                     types.Part(

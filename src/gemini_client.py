@@ -15,9 +15,9 @@ from utils.logging_config import get_logger
 
 logger = get_logger("gemini_client")
 
-# Candidate models in preference order for failover
+# Candidate models in preference order for failover (text generation only)
 DEFAULT_FALLBACK_MODELS = [
-    "gemini-3.7-flash",
+    "gemini-3-flash-preview",
     "gemini-3.5-flash-lite",
     "gemini-flash-lite-latest",
 ]
@@ -30,7 +30,7 @@ def create_gemini_client() -> genai.Client:
 
 def get_model_name() -> str:
     """Return the configured primary Gemini model name."""
-    return os.getenv("GEMINI_MODEL", GEMINI_MODEL or "gemini-3.7-flash")
+    return os.getenv("GEMINI_MODEL", GEMINI_MODEL or "gemini-3-flash-preview")
 
 
 def generate_content_with_retry(
@@ -68,19 +68,25 @@ def generate_content_with_retry(
                 err_msg = str(exc)
                 is_quota = "429" in err_msg or "RESOURCE_EXHAUSTED" in err_msg
                 is_transient = "503" in err_msg or "UNAVAILABLE" in err_msg or "overloaded" in err_msg.lower()
+                is_not_found = "404" in err_msg or "NOT_FOUND" in err_msg
 
                 if is_quota:
                     logger.warning(
                         f"Model {model_name} quota exhausted (429). Switching to next available candidate..."
                     )
                     break  # Break retry loop for this model; move immediately to next candidate
+                elif is_not_found:
+                    logger.warning(
+                        f"Model {model_name} not found (404). Switching to next available candidate..."
+                    )
+                    break  # Skip unavailable model
                 elif is_transient:
                     logger.warning(
                         f"Model {model_name} transient error (attempt {attempt + 1}/{max_retries}): {exc}. Retrying..."
                     )
                     time.sleep(1.5 * (attempt + 1))
                 else:
-                    # Non-retriable exception (e.g. invalid arguments)
+                    # Non-retriable exception (e.g. invalid arguments, auth error)
                     raise exc
 
     if last_exc:
