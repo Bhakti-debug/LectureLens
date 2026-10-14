@@ -4,6 +4,8 @@ Synthesizes evidence-grounded answers using retrieved lecture passages,
 strictly adhering to lecture boundaries and honest evidence attribution.
 """
 
+from typing import Any, Dict, List, Optional
+
 from gemini_client import (
     create_gemini_client,
     get_model_name,
